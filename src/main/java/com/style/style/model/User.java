@@ -1,4 +1,7 @@
 package com.style.style.model;
 
-public class User {
+import javax.persistence.Entity;
+
+@Entity
+public class User extends AbstractEntity {
 }

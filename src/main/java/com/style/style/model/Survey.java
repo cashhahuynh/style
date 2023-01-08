@@ -1,4 +1,10 @@
 package com.style.style.model;
 
-public class Survey {
+import javax.persistence.Entity;
+
+@Entity
+public class Survey extends AbstractEntity {
+
+    //list booleans
+
 }

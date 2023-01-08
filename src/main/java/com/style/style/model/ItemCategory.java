@@ -1,4 +1,10 @@
 package com.style.style.model;
 
-public class ItemCategory {
+import javax.persistence.Entity;
+
+@Entity
+public class ItemCategory extends AbstractEntity {
+
+    //list all articles of clothing
+
 }

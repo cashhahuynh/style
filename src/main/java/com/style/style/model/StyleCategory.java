@@ -1,4 +1,10 @@
 package com.style.style.model;
 
-public class StyleCategory {
+import javax.persistence.Entity;
+
+@Entity
+public class StyleCategory extends AbstractEntity {
+
+    //list all styles
+
 }
