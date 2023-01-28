@@ -5,6 +5,6 @@ import javax.persistence.Entity;
 @Entity
 public class StyleCategory extends AbstractEntity {
 
-    //list all styles
+    //complete after item category data passes. also need to think about intelligence and how program would know what styles look like
 
 }

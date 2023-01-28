@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
 
-<p>Hello, World!</p>
+<nav th:replace="fragments :: header"></nav>
+
+<div class="container body-content">
+    <h2>Style App</h2>
+
+</div>
+
+<p>This is the homepage of the app.</p>
 
 </body>
 </html>
