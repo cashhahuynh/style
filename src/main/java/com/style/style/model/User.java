@@ -1,5 +1,7 @@
 package com.style.style.model;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -12,21 +14,24 @@ public class User extends AbstractEntity {
     private String username;
 
     @NotNull
-    private String password;
+    private String pwHash;
+
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {}
 
     public User(String username, String password) {
+        super();
         this.username = username;
-        this.password = password;
+        this.pwHash = encoder.encode(password);
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getPassword() {
-        return password;
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
     }
 
 }

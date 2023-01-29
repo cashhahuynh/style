@@ -15,13 +15,15 @@
 <div th:fragment="header" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a th:href="@{/}" class="navbar-brand">Style App</a>
+            <a th:href="@{/homepage}" class="navbar-brand">Style App</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a th:href="@{/wear}">Ready to Wear</a></li>
                 <li><a th:href="@{/sell}">Ready to Sell</a></li>
                 <li><a th:href="@{/buy}">Ready to Buy</a></li>
+                <li><a th:href="@{/login}">Log out</a></li>
+                <li><a th:href="@{/register}">Register</a></li>
             </ul>
         </div>
     </div>

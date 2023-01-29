@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container body-content">
 
-<p>This is the buy page</p>
+<nav th:replace="fragments :: header"></nav>
+
+<div class="container body-content">
+    <h2>Ready to Buy</h2>
+
+</div>
 
 </body>
 </html>
