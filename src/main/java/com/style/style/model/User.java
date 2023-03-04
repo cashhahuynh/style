@@ -2,10 +2,8 @@ package com.style.style.model;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 public class User extends AbstractEntity {
@@ -15,6 +13,10 @@ public class User extends AbstractEntity {
 
     @NotNull
     private String pwHash;
+
+    @OneToOne
+    @JoinColumn(name = "SURVEY_ID")
+    private Survey survey;
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
@@ -34,4 +36,11 @@ public class User extends AbstractEntity {
         return encoder.matches(password, pwHash);
     }
 
+    public Survey getSurvey() {
+        return survey;
+    }
+
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
+    }
 }

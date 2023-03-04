@@ -1,15 +1,23 @@
 package com.style.style.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Survey extends AbstractEntity {
 
-    //list booleans
+    //need to include validation annotations
+    @NotNull(message = "Must be completed.")
     private Boolean conflict, organized, inspired, people, undetected, admired, structure, traditions, socialCapital, autoPilot, opinions, help, ambitious, company;
+
+    @OneToOne(mappedBy = "survey") //name of field we're storing that creates relationship
+    private User user;
 
     public Survey() {};
 
+    //need to include validation in constructor
     public Survey(Boolean conflict, Boolean organized, Boolean inspired, Boolean people, Boolean undetected,
                   Boolean admired, Boolean structure, Boolean traditions, Boolean socialCapital, Boolean autoPilot,
                   Boolean opinions, Boolean help, Boolean ambitious, Boolean company) {
@@ -141,5 +149,13 @@ public class Survey extends AbstractEntity {
 
     public void setCompany(Boolean company) {
         this.company = company;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

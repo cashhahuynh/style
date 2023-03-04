@@ -7,8 +7,153 @@
     <nav th:replace="fragments :: header"></nav>
 </span>
 
+<p>Welcome new user! Please complete the survey below so that we can match a style with you.</p>
+
 <div class="container body-content">
-    <h2>Survey page</h2>
+    <h3>Survey questions</h3>
+    <form method="post">
+        <div class="form-check">
+            <label>1. I stand up for myself even if it makes others uncomfortable.
+                <select class="form-control" th:field="${survey.conflict}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.conflict}"></p>
+        </div>
+        <div class="form-check">
+            <label>2. I am organized.
+                <select class="form-control" th:field="${survey.organized}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.organized}"></p>
+        </div>
+        <div class="form-check">
+            <label>3. I am inspired by thought and experience.
+                <select class="form-control" th:field="${survey.inspired}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.inspired}"></p>
+        </div>
+        <div class="form-check">
+            <label>4. I like being around active and lively people.
+                <select class="form-control" th:field="${survey.people}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.people}"></p>
+        </div>
+        <div class="form-check">
+            <label>5. I like remaining undetected in public.
+                <select class="form-control" th:field="${survey.undetected}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.undetected}"></p>
+        </div>
+        <div class="form-check">
+            <label>6. I like to be admired and celebrated.
+                <select class="form-control" th:field="${survey.admired}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.admired}"></p>
+        </div>
+        <div class="form-check">
+            <label>7. I like having structure and deadlines.
+                <select class="form-control" th:field="${survey.structure}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.structure}"></p>
+        </div>
+        <div class="form-check">
+            <label>8. I enjoy participating in traditions.
+                <select class="form-control" th:field="${survey.traditions}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.traditions}"></p>
+        </div>
+        <div class="form-check">
+            <label>9. I believe social capital is important.
+                <select class="form-control" th:field="${survey.socialCapital}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.socialCapital}"></p>
+        </div>
+        <div class="form-check">
+            <label>10. I like living my life on auto-pilot.
+                <select class="form-control" th:field="${survey.autoPilot}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.autoPilot}"></p>
+        </div>
+        <div class="form-check">
+            <label>11. I care about other people's opinions of me.
+                <select class="form-control" th:field="${survey.opinions}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.opinions}"></p>
+        </div>
+        <div class="form-check">
+            <label>12. I seek help on small, non-urgent tasks.
+                <select class="form-control" th:field="${survey.help}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.help}"></p>
+        </div>
+        <div class="form-check">
+            <label>13. I am ambitious.
+                <select class="form-control" th:field="${survey.ambitious}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.ambitious}"></p>
+        </div>
+        <div class="form-check">
+            <label>14. I enjoy my own company.
+                <select class="form-control" th:field="${survey.company}">
+                    <option th:value="null"></option>
+                    <option th:value="true">True</option>
+                    <option th:value="false">False</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${survey.company}"></p>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+    </form>
 </div>
 
 </body>
